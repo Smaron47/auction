@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+  <title>Dashboard Tables, Free Admin Template</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width">        
+  <link rel="stylesheet" href="/static/admin-css/templatemo_main.css">
+<!-- 
+Dashboard Template 
+http://www.templatemo.com/preview/templatemo_415_dashboard
+-->
+
+
+
+
+
+
+
+
+
+
+<style>
+
+  * {box-sizing: border-box}
+
+/* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+  {%for i in m%}
+  <div id="{{i}}" class="modal">
+    <span onclick="document.getElementById('{{i}}').style.display='none'" class="close" title="Close Modal">times;</span>
+    <form class="modal-content" action="/pr_u/{{i}}" method="POST">
+      <div class="container">
+        <h1>Update Product</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+        <label for="email"><b>Product Price</b></label>
+        <input type="text" placeholder="$" name="price" required>
+        
+        <label for="email"><b>SET TIME</b></label>
+        <input type="text" placeholder="September 10, 2021 15:37:25" name="time" required>
+
+
+<!--       <label for="psw"><b>Delivery</b></label>
+        <select name="isDeli">
+          <option value="none">Select Country</option>
+          <option value="Delivery">Delivery</option>
+          <option value="Non Delivery">Non Delivery</option>
+
+      </select>
+  
+        <label for="psw-repeat"><b>Payment</b></label>
+        <select name="isPay">
+          <option value="none">Select Payment</option>
+          <option value="Online">Online</option>
+          <option value="Offline">Offline</option>
+
+      </select>-->
+  
+        <label>
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        </label>
+  
+        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+  
+        <div class="clearfix">
+          <button type="button" onclick="document.getElementById('{{i}}').style.display='none'" class="cancelbtn">Cancel</button>
+          <button type="submit" class="signup">Confirm</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script>
+    // Get the modal
+    var modal = document.getElementById('{{i}}');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+{%endfor%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id="main-wrapper">
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <div class="logo"><h1>Dashboard - Admin Template</h1></div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button> 
+      </div>   
+    </div>
+    <div class="template-page-wrapper">
+      <div class="navbar-collapse collapse templatemo-sidebar">
+        <ul class="templatemo-sidebar-menu">
+          <li>
+            <form class="navbar-form">
+              <input type="text" class="form-control" id="templatemo_search_box" placeholder="Search...">
+              <span class="btn btn-default">Go</span>
+            </form>
+          </li>
+          <li class="active"><a href="#"><i class="fa fa-home"></i>Dashboard</a></li>
+         
+          <li><a href="/Product-hist"><i class="fa fa-cubes"></i><span class="badge pull-right">9</span>Product History</a></li>
+          <li><a href="/product-req"><i class="fa fa-map-marker"></i><span class="badge pull-right">42</span>ProductS</a></li>
+          <li><a href="/users"><i class="fa fa-users"></i><span class="badge pull-right">NEW</span>USERS</a></li>
+          <li><a href="/product-pending"><i class="fa fa-cog"></i>Pendings</a></li>
+          <li><a href="javascript:;" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>Sign Out</a></li>
+        </ul>
+      </div><!--/.navbar-collapse -->
+
+      <div class="templatemo-content-wrapper">
+        <div class="templatemo-content">
+          <ol class="breadcrumb">
+            <li><a href="index.html">Admin Panel</a></li>
+            <li><a href="#">Manage Users</a></li>
+            <li class="active">Tables</li>
+          </ol>
+          <h1>Manage Users</h1>
+          <p>Here goes tables and users.</p>
+
+          <div class="row margin-bottom-30">
+            <div class="col-md-12">
+              <ul class="nav nav-pills">
+                <li class="active"><a href="#">New Users <span class="badge">42</span></a></li>
+                <li><a href="#">Active Users <span class="badge">107</span></a></li>
+                <li><a href="#">Expired Users <span class="badge">3</span></a></li>
+              </ul>          
+            </div>
+          </div> 
+          <div class="row">
+            <div class="col-md-12">
+              <div class="btn-group pull-right" id="templatemo_sort_btn">
+                <button type="button" class="btn btn-default">Sort by</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">First Name</a></li>
+                  <li><a href="#">Last Name</a></li>
+                  <li><a href="#">Username</a></li>
+                </ul>
+              </div>
+              <div class="table-responsive">
+                <h4 class="margin-bottom-15">Requested Product</h4>
+                <table class="table table-striped table-hover table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Email</th>
+                      <th>Name</th>
+                      <th>Title</th>
+                      <th>Phone</th>
+                      <th>Address</th>
+                      <th>Edit</th>
+                      <th>Action</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {%for i in m%}<tr>
+                      <td>{{i}}</td>
+                      <td>{{m[i]["name"]}}</td>
+                      <td>{{m[i]["title"]}}</td>
+                      <td>{{m[i]["phone"]}}</td>
+                      <td>{{m[i]["address"]}}</td>
+                      <td><a href="#" class="btn btn-default">Edit</a></td>                    
+                      <td>
+                        <!-- Split button -->
+                        <div class="btn-group">
+                          <button onclick="document.getElementById('{{i}}').style.display='block'">Action</button>
+
+                        </div>
+                      </td>
+                      <td><a href="{{ url_for('pr_d', record_id =i) }}" class="btn btn-link">Delete</a></td>
+                    </tr>{%endfor%}
+                 
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-responsive">
+                <h4 class="margin-bottom-15">Current Product</h4>
+                <table class="table table-striped table-hover table-bordered">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>First Name</th>
+                      <th>Title</th>
+                      <th>Price</th>
+                      <th>Phone</th>
+                      <th>View</th>
+
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {%for i in dat%}<tr>
+                      <td>1</td>
+                      <td>{{dat[i]["name"]}}</td>
+                      <td>{{dat[i]["title"]}}</td>
+                      <td>{{dat[i]["price"]}}</td>
+                      <td>{{dat[i]["phone"]}}</td>
+                      <td><a href="/product/{{dat[i]['phone']}}" class="btn btn-default">View</a></td>                    
+                      <td>
+                        <!-- Split button -->
+
+                      </td>
+                      <td><a href="/product_del/{{i}}" class="btn btn-link">Delete</a></td>
+                    </tr>{%endfor%}
+                     
+                  </tbody>
+                </table>
+              </div>
+              <ul class="pagination pull-right">
+                <li class="disabled"><a href="#">&laquo;</a></li>
+                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">2 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">3 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">4 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">5 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">&raquo;</a></li>
+              </ul>  
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Are you sure you want to sign out?</h4>
+            </div>
+            <div class="modal-footer">
+              <a href="sign-in.html" class="btn btn-primary">Yes</a>
+              <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="templatemo-footer">
+        <div class="templatemo-copyright">
+          <p>Copyright &copy; 2084 Your Company Name <!-- Credit: www.templatemo.com --></p>
+        </div>
+      </footer>
+    </div>
+</div>
+    <script src="/static/admin-js/jquery.min.js"></script>
+    <script src="/static/admin-js/bootstrap.min.js"></script>
+    <script src="/static/admin-js/templatemo_script.js"></script>
+  </body>
+</html>

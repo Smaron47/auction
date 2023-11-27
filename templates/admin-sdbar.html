@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+  <title>Dashboard, Free HTML5 Admin Template</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width">        
+  <link rel="stylesheet" href="/static/admin-css/templatemo_main.css">
+<!-- 
+Dashboard Template 
+http://www.templatemo.com/preview/templatemo_415_dashboard
+-->
+
+
+</head>
+<body>
+  <div class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+       
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button> 
+      </div>   
+    </div>
+    <div class="template-page-wrapper">
+      <div class="navbar-collapse collapse templatemo-sidebar">
+        <ul class="templatemo-sidebar-menu">
+
+          <li class="active"><a href="#"><i class="fa fa-home"></i>Dashboard</a></li>
+          <li class="sub open">
+            <a href="javascript:;">
+              <i class="fa fa-database"></i> Premium League <div class="pull-right"><span class="caret"></span></div>
+            </a>
+            <ul class="templatemo-submenu">
+              <li><a href="/ap-results">Results</a></li>
+              <li><a href="/ap-fixtures">Fixture</a></li>
+              <li><a href="/ap-teams">Teams</a></li>             
+              <li><a href="/ap-players">Players</a></li>
+              <li><a href="/ap-disput">Disput</a></li>
+            </ul>
+          </li>
+          <li class="sub open">
+            <a href="javascript:;">
+              <i class="fa fa-database"></i> Champion League<div class="pull-right"><span class="caret"></span></div>
+            </a>
+            <ul class="templatemo-submenu">
+              <li><a href="/ac-results">Results</a></li>
+              <li><a href="/ac-fixtures">Fixture</a></li>
+              <li><a href="/ac-teams">Teams</a></li>             
+              <li><a href="/ac-players">Players</a></li>
+              <li><a href="/ac-disput">Disput</a></li>
+            </ul>
+          </li>
+          <li><a href="/a-reqst"><i class="fa fa-cubes"></i><span class="badge pull-right"></span>Requests</a></li>
+          <li><a href="/a_allusers"><i class="fa fa-map-marker"></i><span class="badge pull-right"></span>All Users</a></li>
+          <li><a href="/Rungame"><i class="fa fa-users"></i><span class="badge pull-right"></span>Run Game</a></li>
+          <li><a href="/Open-Tmarket"><i class="fa fa-cog"></i>Transfer market</a></li>
+          <li><a href="javascript:;" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>Sign Out</a></li>
+        </ul>
+      </div><!--/.navbar-collapse -->
+      {% block content %}
+      {% endblock %}
